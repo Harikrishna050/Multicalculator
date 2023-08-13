@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utils.css">
+    <link rel="stylesheet" href="styleInterest.css">
+    <script src="https://kit.fontawesome.com/2317a5f1c5.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/2317a5f1c5.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <div class="navbar disp  font">
+        <div class="left disp flex-row font">
+            <div class="hum">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </div>
+            <h1>MultiCalculator</h1>
+            <h5 class="disp ">.com</h5>
+        </div>
+        <div class="right right-resp">
+            <ul class="disp">
+                <li><a class="my-link  font"  href="basic.html">BASIC</a></li>
+                <li><a class="my-link font" href="scientific.html">SCIENTIFIC</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="homepage disp  background">
+        <div class="section  align mx-width"></div>
+        <div class="contain  align mx-width ">
+            <div class="seperate ">
+                <header>
+                    <h2>Simple Interest Calculator</h2>
+                </header>
+
+                <div class="form-group">
+                    <label for="principal">Principal Amount:</label>
+                    <input type="number" id="principal" placeholder="Enter principal amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Interest Rate (%):</label>
+                    <input type="number" id="rate" placeholder="Enter interest rate" required>
+                </div>
+                <div class="form-group">
+                    <label for="borrowDate">Date of Borrow</label>
+                    <input class="first" type="date" id="date-input" onInput="updateOutput()" name="date-input">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time Period:</label>
+                    <input type="text" class="time" readonly>
+                </div>
+                <div id="display" class="display displayGo">
+                    <div class="form-group">
+                        <label for="interest">Interest(₹):</label>
+                        <input type="text" class="interest" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="total">Total Amount To be Paid(₹):</label>
+                        <input type="text" class="total" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="calculateInterest()">Calculate</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <div class="center">
+            Copyright &copy;   www.multiCalculator.com. All rights reserved!
+        </div>
+    </footer>
+
+
+
+</body>
+<script src="script.js"></script>
+<script src="scriptInterest.js"></script>
+
+</html>

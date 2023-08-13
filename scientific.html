@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utils.css">
+    <link rel="stylesheet" href="styleScientific.css">
+    <script src="https://kit.fontawesome.com/2317a5f1c5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="navbar disp  font">
+        <div class="left disp flex-row font">
+            <div class="hum">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </div>
+            <h1>MultiCalculator</h1>
+            <h5 class="disp ">.com</h5>
+        </div>
+        <div class="right right-resp">
+            <ul class="disp">
+                <li><a class="my-link  font"  href="basic.html">BASIC</a></li>
+                <li><a class="my-link set font" href="scientific.html">SCIENTIFIC</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="homepage background">
+        <div class="container ">
+            <div class="row">
+                <input type="text">
+            </div>
+            <div class="row">
+                <button class="btn" onclick="buttonPressedT('sin(')">sin</button>
+                <button class="btn" onclick="buttonPressedT('cos()')">cos</button>
+                <button class="btn" onclick="buttonPressedT('tan(')">tan</button>
+                <button class="btn" onclick="buttonPressedT('log(')">log</button>
+                <button class="btn" onclick="buttonPressedT('ln(')">ln</button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="buttonPressedT('sin-1(')">sin<sup>-1</sup></button>
+                <button class="btn" onclick="buttonPressedT('cos-1(')">cos<sup>-1</sup></button>
+                <button class="btn" onclick="buttonPressedT('tan-1(')">tan<sup>-1</sup></button>
+                <button class="btn" onclick="buttonPressedT('π')">π</button>
+                <button class="btn" onclick="buttonPressedE('2.3')">e</button>
+        
+
+                
+            </div>
+            <div class="row p">
+                <button class="btn" onclick="buttonPressed('Math.pow(')"><p>x<sup>y</sup></p></button>
+                <button class="btn" onclick="buttonPressedPow('cube')"><p>x<sup>3</sup></p></button>
+                <button class="btn" onclick="buttonPressedPow('sqr')"><p>x<sup>2</sup></p></button>
+                <button class="btn" onclick="buttonPressed('e^')"><p>e<sup>x</sup></p></button>
+                <button class="btn" onclick="buttonPressed('10^')"><p>10<sup>x</sup></p></button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="buttonPressed('√')"><p><sup>y</sup>√x</p></button>
+                <button class="btn" onclick="buttonPressedPow('cbrt')"><p><sup>3</sup>√x</p></button>
+                <button class="btn" onclick="buttonPressedPow('sqrt')"><p>√x</p></button>
+                <button class="btn" onclick="buttonPressed('%')"><p>%</p></button>
+                <button class="btn" onclick="buttonPressed('Ans')"><p>Ans</p></button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="buttonPressed('(')">(</button>
+                <button class="btn" onclick="buttonPressed(')')">)</button>
+                <button class="btn" onclick="buttonPressedPow('1/')">1/x</button>
+                <button class="btn" onclick="buttonPressed('/')">/</button>
+                <button class="btn" onclick="buttonPressedFact('!')">n!</button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="buttonPressed('7')">7</button>
+                <button class="btn" onclick="buttonPressed('8')">8</button>
+                <button class="btn" onclick="buttonPressed('9')">9</button>
+                <button class="btn" onclick="buttonPressed('*')">*</button>
+                <button class="btn" onclick="clearInput()">AC</button>
+            </div>
+            <div class="row ">
+                <button class="btn" onclick="buttonPressed('4')">4</button>
+                <button class="btn" onclick="buttonPressed('5')">5</button>
+                <button class="btn" onclick="buttonPressed('6')">6</button>
+                <button class="btn " onclick="buttonPressed('+')">+</button>
+                <button class="btn" onclick="clearCH()">CL</button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="buttonPressed('1')">1</button>
+                <button class="btn" onclick="buttonPressed('2')">2</button>
+                <button class="btn" onclick="buttonPressed('3')">3</button>
+                <button class="btn" onclick="buttonPressed('-')">-</button>
+                <button class="btn" onclick="buttonPressed('')">M+</button>
+            </div>
+            <div class="row inc2">
+                <button class="btn" onclick="buttonPressed('0')">0</button>
+                <button class="btn" onclick="buttonPressed('.')">.</button>
+                <button class="btn" onclick="calculate()">=</button>
+                <button class="btn " onclick="buttonPressed(',')">,</button>
+                <button class="btn" onclick="buttonPressed('')">M-</button>
+            </div>
+        </div>
+        <div class="extra disp  font">
+            <div class="box disp flex-col">
+                <a class="m-auto" href="interestC.html"><img src="https://play-lh.googleusercontent.com/m_dS1ymeuV5VMLtFt7bsb1uhxscUuU62iYi9urwrJaVGH9dmb74HnpAdsMIa8owSI84=w480-h960-rw" alt="HTML tutorial" style="width:150px;height:150px;"></a>
+                
+                <a class="m-auto" href="interestC.html">Interest Calculator</a>
+            </div>
+            <div class="box disp flex-col">
+                <a class="m-auto" href="default.asp"><img src="https://cdn.shopify.com/app-store/listing_images/b33f6d876accac12b91af70e42dabbdb/icon/CK-cufzoue8CEAE=.png" alt="HTML tutorial" style="width:150px;height:150px;"></a>
+                <a class="m-auto"  href="">Currency Converter</a>
+            </div>
+            <div class="box disp flex-col">
+                <a class="m-auto change" href="default.asp"><img  src="https://play-lh.googleusercontent.com/_0KoBjoneEHaurUK7uQZOZSIYo33GZJ3WPJcBvStQiqqaIwvVuSN5zfVBq7_gEvHdA=w480-h960-rw" style="width:150px;height:150px;"></a>
+                
+                <a class="m-auto" href="">Land Unit Converter</a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="center">
+            Copyright &copy;   www.multiCalculator.com. All rights reserved!
+        </div>
+    </footer>
+
+
+</body>
+<!-- <script src="script.js"></script> -->
+<script src="ScientificJS.js"></script>
+
+</html>

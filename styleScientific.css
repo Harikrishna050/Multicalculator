@@ -1,0 +1,91 @@
+.container {
+    /* background-color: red; */
+    padding: 40px 50px;
+}
+.btn {
+    padding: 15px 18px;
+    margin: 0px 2px;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    width: 55px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container div:nth-child(2) .btn{
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.container div:nth-child(3) .btn{
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.container div:nth-child(4) .btn{
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.container div:nth-child(5) .btn{
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:active {
+    background-color: brown;
+}
+
+
+.row {
+    margin: 8px 0px;
+}
+
+.row input {
+    padding: 5px;
+    margin: 0px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 295px;
+    
+    background-color: #ececf3;
+}
+
+@media only screen and (max-width:415px) {
+    .hum {
+        display: block;
+        position: absolute;
+        left: 14px;
+        top: 31px;
+    }
+    .row{
+        width: 270px;
+        margin: 2px 0px;
+    }
+    .row input{
+        width:253px
+    }
+
+    .btn{
+        width: 50px;
+        margin: 0px;
+    }
+    .homepage{
+        height: 165vh;
+    }
+
+}
+
+    @media  (min-width:415px) and (max-width:920px) {
+    .homepage{
+        height: 170vh;
+    }
+}

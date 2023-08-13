@@ -1,0 +1,97 @@
+.homepage{
+    height: 90vh;
+    background-color: rgb(140, 166, 189);
+}
+.contain{
+    width: 40%;
+    color: rgb(255, 255, 255);
+    
+}
+.align{
+    padding: 60px 80px;
+}
+
+.seperate{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    background-color: rgb(111, 142, 168,0.2);
+    padding: 30px 0px;
+}
+
+.form-group{
+display: flex;
+flex-direction: column;
+margin:  10px 0px;
+padding: 0px 20px;
+}
+input{
+    width: 90%;
+    padding: 5px 3px;
+    background-color: black;
+    border: none;
+    color: white;
+}
+.contain button{
+    width: 94%;
+    padding: 8px;
+    font-size: 15px;
+    background-color: rgb(78, 152, 78);
+    border: 1px solid black;
+    color: white;
+}
+.contain button:hover{
+    background-color: brown;
+}
+header{
+    margin: 0px 20px ;
+    text-align: center;
+}
+
+
+
+.displayGo{
+    transform: translate(-1003px, 0px);
+    position: absolute;
+}
+
+
+@media only screen and (max-width:389px) {
+
+    .section{
+        display: none;
+    }
+    .contain {
+        width: 58%;
+    }
+    .seperate{
+        height: 100%;
+        width: 110%;
+    }
+}
+
+
+
+@media  (min-width:400px) and (max-width:920px) {
+
+    header{
+        text-align: center;
+    }
+    header h1{
+        font-size: 11px;
+    width: 125px;
+    }
+
+    .section{
+        display: none;
+    }
+
+    .mx-width {
+        width: 70vw;
+        height: 40vh;
+    }
+    .seperate{
+        width: 90%;
+        height: 93%;
+    }
+}
