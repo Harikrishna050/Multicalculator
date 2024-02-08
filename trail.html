@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utils.css">
+    <script src="https://kit.fontawesome.com/2317a5f1c5.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- <p>This text contains <sup>superscript</sup> text.</p> -->
+    <div class="navbar disp  font">
+        <div class="left disp flex-row font">
+            <div class="hum">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </div>
+            <h1>MultiCalculator</h1>
+            <h5 class="disp ">.com</h5>
+        </div>
+        <div class="right right-resp">
+            <ul class="disp">
+                <li><a href="advannced/n-base.html">Advanced Calculation</a></li>
+                <li><a class="my-link set font" href="basic.html">BASIC</a></li>
+                <li><a class="my-link font" href="scientific.html">SCIENTIFIC</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="calculator-section">
+        <h2>Complex Number Calculations</h2>
+
+        <label for="real-part-1">Real Part 1:</label>
+        <input type="text" id="real-part-1" placeholder="Enter real part">
+
+        <label for="imaginary-part-1">Imaginary Part 1:</label>
+        <input type="text" id="imaginary-part-1" placeholder="Enter imaginary part">
+
+        <label for="real-part-2">Real Part 2:</label>
+        <input type="text" id="real-part-2" placeholder="Enter real part">
+
+        <label for="imaginary-part-2">Imaginary Part 2:</label>
+        <input type="text" id="imaginary-part-2" placeholder="Enter imaginary part">
+
+        <label for="operation">Choose an operation:</label>
+        <select id="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="modulus">Modulus</option>
+        </select>
+
+        <button onclick="performComplexOperation()">Calculate</button>
+        <label for="complex-result">Result:</label>
+        <input type="text" id="complex-result" readonly>
+    </div>
+
+
+    <div class="calculator-section">
+        <h2>Coordinate Conversion</h2>
+
+        <!-- Cartesian to Polar -->
+        <label for="cartesian-x">Cartesian X:</label>
+        <input type="text" id="cartesian-x" placeholder="Enter X">
+        <label for="cartesian-y">Cartesian Y:</label>
+        <input type="text" id="cartesian-y" placeholder="Enter Y">
+        <button onclick="convertCartesianToPolar()">Cartesian to Polar</button>
+
+        <!-- Polar to Cartesian -->
+        <label for="polar-r">Polar R:</label>
+        <input type="text" id="polar-r" placeholder="Enter R">
+        <label for="polar-theta">Polar θ:</label>
+        <input type="text" id="polar-theta" placeholder="Enter θ">
+        <button onclick="convertPolarToCartesian()">Polar to Cartesian</button>
+
+
+        <label for="conversion-result">Result:</label>
+        <textarea id="conversion-result" rows="4" readonly></textarea>
+    </div>
+
+
+
+
+
+
+    <!-- Example HTML for Metric Conversion -->
+<div class="calculator-section">
+    <h2>Metric Conversion</h2>
+
+    <label for="metric-value">Enter Value:</label>
+    <input type="text" id="metric-value" placeholder="Enter value">
+
+    <label for="source-unit">Source Unit:</label>
+    <select id="source-unit">
+        <option value="meters">Meters</option>
+        <option value="kilometers">Kilometers</option>
+        <option value="centimeters">Centimeters</option>
+        <!-- Add more unit options as needed -->
+    </select>
+
+    <label for="target-unit">Target Unit:</label>
+    <select id="target-unit">
+        <option value="meters">Meters</option>
+        <option value="kilometers">Kilometers</option>
+        <option value="centimeters">Centimeters</option>
+        <!-- Add more unit options as needed -->
+    </select>
+
+    <button onclick="convertMetric()">Convert</button>
+
+    <label for="conversion-result">Result:</label>
+    <input type="text" id="conversion-res" readonly>
+</div>
+
+
+
+
+
+
+
+    <footer>
+        <div class="center">
+            Copyright &copy; www.multiCalculator.com. All rights reserved!
+        </div>
+    </footer>
+
+
+
+</body>
+<script src="script.js"></script>
+<script>
+    function performComplexOperation() {
+        // Get the input values
+        var real1 = parseFloat(document.getElementById('real-part-1').value);
+        var imag1 = parseFloat(document.getElementById('imaginary-part-1').value);
+        var real2 = parseFloat(document.getElementById('real-part-2').value);
+        var imag2 = parseFloat(document.getElementById('imaginary-part-2').value);
+        var operation = document.getElementById('operation').value;
+
+        var resultReal = 0;
+        var resultImag = 0;
+
+
+
+        // Perform the selected operation
+        switch (operation) {
+            case 'add':
+                resultReal = real1 + real2;
+                resultImag = imag1 + imag2;
+                break;
+            case 'subtract':
+                resultReal = real1 - real2;
+                resultImag = imag1 - imag2;
+                break;
+            case 'multiply':
+                resultReal = real1 * real2 - imag1 * imag2;
+                resultImag = real1 * imag2 + imag1 * real2;
+                break;
+            case 'modulus':
+                // Modulus of the first complex number
+
+                resultReal = Math.sqrt(real1 * real1 + imag1 * imag1);
+                resultImag = 0; // Modulus is a real number
+                break;
+        }
+
+        // Display the result
+        var resultString = '';
+        if (operation === 'modulus') {
+            resultString = resultReal.toString();
+        } else {
+            if (resultImag >= 0) {
+                resultString = resultReal.toString() + ' + ' + resultImag.toString() + 'i';
+            } else {
+                resultString = resultReal.toString() + ' - ' + Math.abs(resultImag).toString() + 'i';
+            }
+        }
+
+        document.getElementById('complex-result').value = resultString;
+    }
+
+
+    function convertCartesianToPolar() {
+        // Get the input values
+        var x = parseFloat(document.getElementById('cartesian-x').value);
+        var y = parseFloat(document.getElementById('cartesian-y').value);
+
+        // Perform Cartesian to Polar conversion
+        var r = Math.sqrt(x * x + y * y);
+        var theta = Math.atan2(y, x);
+
+        // Display the result
+        document.getElementById('conversion-result').value = `Polar Coordinates: (${r}, ${theta})`;
+    }
+
+    function convertPolarToCartesian() {
+        // Get the input values
+        var r = parseFloat(document.getElementById('polar-r').value);
+        var theta = parseFloat(document.getElementById('polar-theta').value);
+
+        // Perform Polar to Cartesian conversion
+        var x = r * Math.cos(theta);
+        var y = r * Math.sin(theta);
+
+        // Display the result
+        document.getElementById('conversion-result').value = `Cartesian Coordinates: (${x}, ${y})`;
+    }
+
+
+    function convertMetric() {
+        // Get input values
+        var value = parseFloat(document.getElementById('metric-value').value);
+        var sourceUnit = document.getElementById('source-unit').value;
+        var targetUnit = document.getElementById('target-unit').value;
+
+        // Perform metric conversion based on the selected units
+        var result;
+        switch (sourceUnit + '-' + targetUnit) {
+            case 'meters-kilometers':
+                result = value / 1000;
+                break;
+            case 'kilometers-meters':
+                result = value * 1000;
+                break;
+            case 'centimeters-meters':
+                result = value / 100;
+                break;
+            case 'meters-centimeters':
+                result = value * 100;
+                break;
+            case 'centimeters-kilometers':
+                result = value / 100000;
+                break;
+            case 'kilometers-centimeters':
+                result = value * 100000;
+                break;
+            // Add more conversion cases as needed
+            default:
+                result = 'Invalid conversion';
+        }
+
+        // Display the result
+        document.getElementById('conversion-result').value = result;
+    }
+
+    
+</script>
+
+</html>

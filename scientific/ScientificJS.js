@@ -114,7 +114,7 @@ function calculate() {
             let rad = "0.01744*" + input.substring(start + 4, end);
             const result = input.substring(0, start) + "Math.sin(" + rad + ")" + input.substring(start+end + 1);
             console.log(result)
-            document.querySelector('input').value = eval(result);
+            document.querySelector('input').value = Math.round(eval(result));
         }
         if (document.querySelector('input').value.includes('cos(')) {
             let input = document.querySelector('input').value
@@ -123,7 +123,7 @@ function calculate() {
             let rad = "0.01744*" + input.substring(start + 4, end);
             const result = input.substring(0, start) + "Math.cos(" + rad + ")" + input.substring(start+end + 1);
             console.log(result)
-            document.querySelector('input').value = eval(result);
+            document.querySelector('input').value = Math.round(eval(result));
         }
         if (document.querySelector('input').value.includes('tan(')) {
             let input = document.querySelector('input').value
@@ -132,7 +132,7 @@ function calculate() {
             let rad = "0.01744*" + input.substring(start + 4, end);
             const result = input.substring(0, start) + "Math.tan(" + rad + ")" + input.substring(start+end + 1);
             console.log(result)
-            document.querySelector('input').value = eval(result);
+            document.querySelector('input').value = Math.round(eval(result));
         }
         if (document.querySelector('input').value.includes('sin-1(')) {
             let input=document.querySelector('input').value
@@ -141,7 +141,7 @@ function calculate() {
             let rad=input.substring(start+6,end);
             const result=input.substring(0,start)+"Math.asin("+rad+")"+input.substring(start+end+1)+"*57.325";
             console.log(result)
-            document.querySelector('input').value = eval(result);
+            document.querySelector('input').value = Math.round(eval(result));
          }
          if (document.querySelector('input').value.includes('cos-1(')) {
             let input=document.querySelector('input').value
@@ -150,7 +150,7 @@ function calculate() {
             let rad=input.substring(start+6,end);
             const result=input.substring(0,start)+"Math.acos("+rad+")"+input.substring(start+end+1)+"*57.325";
             console.log(result)
-            document.querySelector('input').value = eval(result);
+            document.querySelector('input').value = Math.round(eval(result));
          }
          if (document.querySelector('input').value.includes('tan-1(')) {
             let input=document.querySelector('input').value
@@ -159,7 +159,7 @@ function calculate() {
             let rad=input.substring(start+6,end);
             const result=input.substring(0,start)+"Math.atan("+rad+")"+input.substring(start+end+1)+"*57.325";
             console.log(result)
-            document.querySelector('input').value = eval(result);
+            document.querySelector('input').value = Math.round(eval(result));
          }
          if (document.querySelector('input').value.includes('log(')) {
             let input=document.querySelector('input').value
@@ -168,7 +168,7 @@ function calculate() {
             let rad=input.substring(start+4,end);
             const result=input.substring(0,start)+"Math.log("+rad+")"+input.substring(start+end+1)+"/2.3028";
             console.log(result)
-            document.querySelector('input').value = eval(result);
+            document.querySelector('input').value = Math.round(eval(result));
          }
          if (document.querySelector('input').value.includes('ln(')) {
             let input=document.querySelector('input').value
@@ -213,6 +213,13 @@ function clearInput() {
 function clearCH() {
     const input = document.querySelector('input').value
     document.querySelector('input').value = input.substring(0, input.length - 1);
+}
+
+
+function insertSymbol(symbol) {
+    // Assuming you have an input field to display expressions
+    const inp=document.querySelector('input').value;
+    document.querySelector('input').value =eval('Math.abs(' + inp + ')');
 }
 
 burger=document.querySelector(".hum")
